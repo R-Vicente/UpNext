@@ -1,0 +1,68 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <linearGradient id="grad" x1="40" y1="216" x2="216" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF5A8A"/>
+      <stop offset="100%" stop-color="#6A5CFF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- U exterior (meio-termo) -->
+  <path
+    d="
+      M84 48
+      V144
+      C84 184 108 216 144 214
+      C180 216 204 184 204 144
+      V104
+    "
+    stroke="url(#grad)"
+    stroke-width="44"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    transform="translate(-12, 0)"
+    fill="none"
+  />
+
+  <!-- U interior -->
+  <path
+    d="
+      M84 48
+      V144
+      C84 184 108 216 144 214
+      C180 216 204 184 204 144
+      V104
+    "
+    stroke="#FFFFFF"
+    stroke-width="8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+    transform="
+      translate(-12, 0)
+      scale(0.999)
+      translate(1, 0.5)
+    "
+  />
+
+  <!-- Arrow -->
+  <g transform="scale(0.75) translate(60, 21)">
+  <path d="M176 64 L216 24"
+        stroke="url(#grad)"
+        stroke-width="20"
+        stroke-linecap="round"/>
+  <path d="M216 24 V64 M216 24 H176"
+        stroke="url(#grad)"
+        stroke-width="20"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"/>
+</g>
+ 
+
+</svg>
+
+
+
+

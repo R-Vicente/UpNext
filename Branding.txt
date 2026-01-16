@@ -1,0 +1,183 @@
+import React, { useState } from 'react';
+import { Check } from 'lucide-react';
+
+const UpNextBrand = () => {
+  const [copiedItem, setCopiedItem] = useState(null);
+  const [palette, setPalette] = useState('saltPepper');
+
+  const palettes = {
+    saltPepper: { name: 'Salt and Pepper', main: '#FFFFFF', light: '#D4D4D4', medium: '#B3B3B3', dark: '#2B2B2B' },
+    gothicNoir: { name: 'Gothic Noir', main: '#000000', light: '#D1D0D0', medium: '#988686', dark: '#5C4E4E' },
+    yachtClub: { name: 'Yacht Club', main: '#F2F0EF', light: '#BBBDBC', medium: '#245F73', dark: '#733E24' },
+    harborHaze: { name: 'Harbor Haze', main: '#909EAE', light: '#5C8DC5', medium: '#AD9E90', dark: '#736F60' },
+    cappuccino: { name: 'Cappuccino', main: '#D6B588', light: '#C6C0B9', medium: '#705E46', dark: '#422701' },
+    peachSkyline: { name: 'Peach Skyline', main: '#FFDBBB', light: '#BADDFF', medium: '#BAFFF5', dark: '#496580' },
+    winterChill: { name: 'Winter Chill', main: '#B8E3E9', light: '#93B1B5', medium: '#4F7C82', dark: '#4F7C82' },
+    summerBreeze: { name: 'Summer Breeze', main: '#FFEB3B', light: '#F88379', medium: '#82C8E5', dark: '#E6D8C4' }
+  };
+
+  const colors = palettes[palette];
+
+  const copyToClipboard = (text, itemName) => {
+    navigator.clipboard.writeText(text);
+    setCopiedItem(itemName);
+    setTimeout(() => setCopiedItem(null), 2000);
+  };
+
+  const ColorSwatch = ({ label, hex }) => (
+    <div className="flex flex-col items-center">
+      <div 
+        className="w-16 h-16 rounded-lg shadow-md cursor-pointer transition-transform hover:scale-105"
+        style={{ backgroundColor: hex }}
+        onClick={() => copyToClipboard(hex, label)}
+      />
+      <span className="text-xs font-medium mt-2 text-gray-700">{label}</span>
+      <span className="text-xs text-gray-500 font-mono">{hex}</span>
+      {copiedItem === label && (
+        <span className="text-xs text-green-600 mt-1 flex items-center gap-1">
+          <Check size={12} /> Copied!
+        </span>
+      )}
+    </div>
+  );
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8">
+      <div className="max-w-6xl mx-auto space-y-8">
+        
+        <div className="text-center space-y-4">
+          <h1 className="text-5xl font-extrabold text-gray-900">UpNext</h1>
+          <p className="text-lg text-gray-600">Your mood. Your moment. Your next.</p>
+          
+          <div className="pt-4">
+            <select 
+              value={palette}
+              onChange={(e) => setPalette(e.target.value)}
+              className="px-4 py-2 border-2 border-gray-300 rounded-lg font-medium bg-white"
+            >
+              {Object.entries(palettes).map(([key, p]) => (
+                <option key={key} value={key}>{p.name}</option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-2xl shadow-xl p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Logo</h2>
+          
+          <div className="bg-gray-50 rounded-xl p-8 mb-4 flex items-center justify-center">
+            <svg width="280" height="100" viewBox="0 0 280 100" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#FF5A8A"/>
+                  <stop offset="100%" stopColor="#6A5CFF"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(5, 15) scale(0.22)">
+                <path d="M84 48 V144 C84 184 108 216 144 214 C180 216 204 184 204 144 V104" 
+                      stroke="url(#grad1)" strokeWidth="44" strokeLinecap="round" 
+                      strokeLinejoin="round" transform="translate(-12, 0)" fill="none"/>
+                <path d="M84 48 V144 C84 184 108 216 144 214 C180 216 204 184 204 144 V104"
+                      stroke="#FFFFFF" strokeWidth="8" strokeLinecap="round" 
+                      strokeLinejoin="round" fill="none" transform="translate(-12, 0) scale(0.999) translate(1, 0.5)"/>
+                <g transform="scale(0.75) translate(60, 21)">
+                  <path d="M176 64 L216 24" stroke="url(#grad1)" strokeWidth="20" strokeLinecap="round"/>
+                  <path d="M216 24 V64 M216 24 H176" stroke="url(#grad1)" strokeWidth="20" 
+                        strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                </g>
+              </g>
+              <text x="75" y="65" fontFamily="Inter, sans-serif" fontSize="32" fontWeight="800" fill="#1F2937">
+                Up<tspan fill={colors.main}>Next</tspan>
+              </text>
+            </svg>
+          </div>
+
+          <div className="bg-gray-900 rounded-xl p-8 flex items-center justify-center">
+            <svg width="280" height="100" viewBox="0 0 280 100" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#FF5A8A"/>
+                  <stop offset="100%" stopColor="#6A5CFF"/>
+                </linearGradient>
+              </defs>
+              <g transform="translate(5, 15) scale(0.22)">
+                <path d="M84 48 V144 C84 184 108 216 144 214 C180 216 204 184 204 144 V104"
+                      stroke="url(#grad2)" strokeWidth="44" strokeLinecap="round"
+                      strokeLinejoin="round" transform="translate(-12, 0)" fill="none"/>
+                <path d="M84 48 V144 C84 184 108 216 144 214 C180 216 204 184 204 144 V104"
+                      stroke="#FFFFFF" strokeWidth="8" strokeLinecap="round"
+                      strokeLinejoin="round" fill="none" transform="translate(-12, 0) scale(0.999) translate(1, 0.5)"/>
+                <g transform="scale(0.75) translate(60, 21)">
+                  <path d="M176 64 L216 24" stroke="url(#grad2)" strokeWidth="20" strokeLinecap="round"/>
+                  <path d="M216 24 V64 M216 24 H176" stroke="url(#grad2)" strokeWidth="20"
+                        strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                </g>
+              </g>
+              <text x="75" y="65" fontFamily="Inter, sans-serif" fontSize="32" fontWeight="800" fill="#FFFFFF">
+                Up<tspan fill={colors.light}>Next</tspan>
+              </text>
+            </svg>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-2xl shadow-xl p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">App Icon</h2>
+          <div className="flex justify-center">
+            <svg width="200" height="200" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor={colors.main}/>
+                  <stop offset="100%" stopColor={colors.dark}/>
+                </linearGradient>
+                <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#FF5A8A"/>
+                  <stop offset="100%" stopColor="#6A5CFF"/>
+                </linearGradient>
+              </defs>
+              <rect width="1024" height="1024" rx="226" fill="url(#bgGrad)"/>
+              <g transform="translate(256, 256) scale(2)">
+                <path d="M84 48 V144 C84 184 108 216 144 214 C180 216 204 184 204 144 V104"
+                      stroke="url(#iconGrad)" strokeWidth="44" strokeLinecap="round"
+                      strokeLinejoin="round" transform="translate(-12, 0)" fill="none"/>
+                <path d="M84 48 V144 C84 184 108 216 144 214 C180 216 204 184 204 144 V104"
+                      stroke="#FFFFFF" strokeWidth="8" strokeLinecap="round"
+                      strokeLinejoin="round" fill="none" transform="translate(-12, 0) scale(0.999) translate(1, 0.5)"/>
+                <g transform="scale(0.75) translate(60, 21)">
+                  <path d="M176 64 L216 24" stroke="url(#iconGrad)" strokeWidth="20" strokeLinecap="round"/>
+                  <path d="M216 24 V64 M216 24 H176" stroke="url(#iconGrad)" strokeWidth="20"
+                        strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-2xl shadow-xl p-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">{palettes[palette].name} Colors</h2>
+          <div className="grid grid-cols-4 gap-6">
+            <ColorSwatch label="Main" hex={colors.main}/>
+            <ColorSwatch label="Light" hex={colors.light}/>
+            <ColorSwatch label="Medium" hex={colors.medium}/>
+            <ColorSwatch label="Dark" hex={colors.dark}/>
+          </div>
+        </div>
+
+        <div className="rounded-2xl shadow-xl p-8 text-white" 
+             style={{background: `linear-gradient(to right, ${colors.main}, ${colors.dark})`}}>
+          <h2 className="text-2xl font-bold mb-4">Quick Reference</h2>
+          <div className="space-y-2 opacity-90 font-mono text-sm">
+            <div>Palette: {palettes[palette].name}</div>
+            <div>Main: {colors.main}</div>
+            <div>Light: {colors.light}</div>
+            <div>Medium: {colors.medium}</div>
+            <div>Dark: {colors.dark}</div>
+            <div className="pt-2">Font: Inter (Google Fonts)</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+};
+
+export default UpNextBrand;

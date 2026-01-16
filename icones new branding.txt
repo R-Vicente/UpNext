@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UpNext - Brand Elements & Icon System</title>
+<style>
+  :root {
+    /* Paleta Baseada em Gothic Noir + Acentos Peach Skyline/Summer Breeze */
+    --bg-main: #000000;
+    --bg-card: #2B2B2B;
+    --text-primary: #FFFFFF;
+    --text-secondary: #D1D0D0;
+    --accent-warm: #FFDBBB; /* Peach Skyline - Para Destaques/Moods Quentes */
+    --accent-cool: #BADDFF; /* Peach Skyline - Para Moods Frios */
+    --accent-action: #F88379; /* Summer Breeze - Para ações destrutivas ou likes */
+    --stroke-color: #D1D0D0; /* Cor padrão dos ícones */
+  }
+
+  body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-secondary);
+    margin: 0;
+    padding: 20px;
+  }
+
+  h1, h2, h3 {
+    color: var(--text-primary);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section {
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: var(--bg-card);
+    border-radius: 12px;
+  }
+
+  /* Logo & Splash Section Styles */
+  .brand-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .brand-box {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .splash-screen-mockup {
+    width: 300px;
+    height: 533px; /* Aspect ratio aproximado de smartphone */
+    background: radial-gradient(circle at center, #2B2B2B 0%, #000000 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 8px solid #1a1a1a;
+    position: relative;
+  }
+
+  .splash-tagline {
+    position: absolute;
+    bottom: 40px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-align: center;
+  }
+
+  /* Icon Grid Styles */
+  .icon-category {
+    margin-bottom: 30px;
+  }
+
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+  }
+
+  .icon-box {
+    background-color: #1a1a1a;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+
+  .icon-box:hover {
+    transform: translateY(-3px);
+    background-color: #252525;
+  }
+
+  .icon-box svg {
+    width: 32px;
+    height: 32px;
+    stroke: var(--stroke-color);
+    /* Garante consistência no estilo de linha */
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    margin-bottom: 10px;
+  }
+  
+  /* Classes utilitárias para cores específicas */
+  .accent-warm { stroke: var(--accent-warm) !important; }
+  .accent-cool { stroke: var(--accent-cool) !important; }
+  .accent-action { stroke: var(--accent-action) !important; }
+  .fill-action { fill: var(--accent-action) !important; stroke: none !important; }
+
+  .icon-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+  }
+
+  textarea.code-block {
+    width: 100%;
+    height: 60px;
+    background-color: #000;
+    color: #988686;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 10px;
+    resize: none;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>UpNext - Brand Elements Definition</h1>
+
+  <div class="brand-header">
+    <div class="brand-box">
+      <h3>Logo Principal</h3>
+      <svg width="150" height="50" viewBox="0 0 150 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 10 L15 40 L40 25 Z" fill="url(#paint0_linear)"/>
+        <path d="M42 25 L52 15 L62 25" stroke="url(#paint1_linear)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="70" y="35" fill="white" font-family="Arial, sans-serif" font-weight="bold" font-size="28">Up</text>
+        <text x="110" y="35" fill="#D1D0D0" font-family="Arial, sans-serif" font-weight="normal" font-size="28">Next</text>
+        
+        <defs>
+          <linearGradient id="paint0_linear" x1="15" y1="10" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFDBBB"/>
+            <stop offset="1" stop-color="#F88379"/>
+          </linearGradient>
+          <linearGradient id="paint1_linear" x1="42" y1="15" x2="62" y2="25" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFDBBB"/>
+            <stop offset="1" stop-color="#BADDFF"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <p style="font-size: 12px; margin-top: 20px;">Conceito: "Forward Motion + Discovery". O botão play evolui para uma seta ascendente.</p>
+    </div>
+
+    <div class="brand-box">
+      <h3>Splash Screen Concept</h3>
+      <div class="splash-screen-mockup">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20 15 L20 65 L65 40 Z" fill="url(#paintSplash)" opacity="0.9"/>
+           <defs>
+            <linearGradient id="paintSplash" x1="20" y1="15" x2="65" y2="65" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFDBBB"/>
+              <stop offset="1" stop-color="#BADDFF"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h2 style="margin: 10px 0 0 0;">UpNext</h2>
+        <div class="splash-tagline">Your mood. Your moment. Your next.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Icon System (SVG)</h2>
+    <p>Todos os ícones seguem um padrão: 24x24 viewbox, 2px stroke, round caps & joins. A cor base é #D1D0D0 (Gothic Noir silver), mas pode ser alterada via CSS (ex: `stroke: currentColor`).</p>
+
+    <div class="icon-category">
+      <h3>1. Moods (Estados de Espírito)</h3>
+      <div class="icon-grid">
+        <div class="icon-box">
+          <svg class="accent-warm" viewBox="0 0 24 24"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/><path d="M8 14C8 14 9.5 16 12 16C14.5 16 16 14 16 14"/><path d="M9 9H9.01"/><path d="M15 9H15.01"/></svg>
+          <div class="icon-label">Rir / Comédia</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/><path d="M8 14C8 14 9.5 16 12 16C14.5 16 16 14 16 14"/><path d="M9 9H9.01"/><path d="M15 9H15.01"/></svg></textarea>
+        </div>
+        <div class="icon-box">
+          <svg class="accent-cool" viewBox="0 0 24 24"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/><path d="M8 15C8 15 9.5 13 12 13C14.5 13 16 15 16 15"/><path d="M9 9H9.01"/><path d="M15 9H15.01"/><path d="M15 18L15 20"/></svg>
+          <div class="icon-label">Chorar / Drama</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/><path d="M8 15C8 15 9.5 13 12 13C14.5 13 16 15 16 15"/><path d="M9 9H9.01"/><path d="M15 9H15.01"/><path d="M15 18L15 20"/></svg></textarea>
+        </div>
+        <div class="icon-box">
+          <svg class="accent-warm" viewBox="0 0 24 24"><path d="M13 2L3 14H12L11 22L21 10H12L13 2Z"/></svg>
+          <div class="icon-label">Adrenalina / Ação</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14H12L11 22L21 10H12L13 2Z"/></svg></textarea>
+        </div>
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5V4.5A2.5 2.5 0 0 1 9.5 7A2.5 2.5 0 0 1 7 4.5V4.5A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 1 17 4.5V4.5A2.5 2.5 0 0 1 14.5 7A2.5 2.5 0 0 1 12 4.5V4.5A2.5 2.5 0 0 1 14.5 2Z"/><path d="M3 7C3 7 5 10 12 10C19 10 21 7 21 7"/><path d="M12 10V14"/><path d="M12 18C12 18 9 20 5 20"/><path d="M12 18C12 18 15 20 19 20"/></svg>
+          <div class="icon-label">Pensar / Thriller</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5V4.5A2.5 2.5 0 0 1 9.5 7A2.5 2.5 0 0 1 7 4.5V4.5A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 1 17 4.5V4.5A2.5 2.5 0 0 1 14.5 7A2.5 2.5 0 0 1 12 4.5V4.5A2.5 2.5 0 0 1 14.5 2Z"/><path d="M3 7C3 7 5 10 12 10C19 10 21 7 21 7"/><path d="M12 10V14"/><path d="M12 18C12 18 9 20 5 20"/><path d="M12 18C12 18 15 20 19 20"/></svg></textarea>
+        </div>
+         <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M9 22C9 22 3 18 3 11C3 6.02944 7.02944 2 12 2C16.9706 2 21 6.02944 21 11C21 18 15 22 15 22"/><path d="M9 10H9.01"/><path d="M15 10H15.01"/><path d="M12 15H12.01"/></svg>
+          <div class="icon-label">Medo / Horror</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 22C9 22 3 18 3 11C3 6.02944 7.02944 2 12 2C16.9706 2 21 6.02944 21 11C21 18 15 22 15 22"/><path d="M9 10H9.01"/><path d="M15 10H15.01"/><path d="M12 15H12.01"/></svg></textarea>
+        </div>
+        <div class="icon-box">
+          <svg class="accent-action" viewBox="0 0 24 24"><path d="M20.84 4.61C20.3292 4.099 19.7228 3.69364 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69364 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.5783 8.50903 2.9987 7.05 2.9987C5.59096 2.9987 4.19169 3.5783 3.16 4.61C2.1283 5.64169 1.54871 7.04096 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93795 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06205 22.0329 6.39464C21.7563 5.72723 21.351 5.12083 20.84 4.61Z"/></svg>
+          <div class="icon-label">Romance</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61C20.3292 4.099 19.7228 3.69364 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69364 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.5783 8.50903 2.9987 7.05 2.9987C5.59096 2.9987 4.19169 3.5783 3.16 4.61C2.1283 5.64169 1.54871 7.04096 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93795 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06205 22.0329 6.39464C21.7563 5.72723 21.351 5.12083 20.84 4.61Z"/></svg></textarea>
+        </div>
+        <div class="icon-box">
+          <svg class="accent-cool" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          <div class="icon-label">Fantasia / Escapismo</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="icon-category">
+      <h3>2. Navegação Principal</h3>
+      <div class="icon-grid">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M3 9.5L12 3L21 9.5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V9.5Z"/><path d="M9 21V12H15V21"/></svg>
+          <div class="icon-label">Home</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3L21 9.5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V9.5Z"/><path d="M9 21V12H15V21"/></svg></textarea>
+        </div>
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21L16.65 16.65"/></svg>
+          <div class="icon-label">Pesquisa</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21L16.65 16.65"/></svg></textarea>
+        </div>
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M19 21L12 16L5 21V5C5 3.89543 5.89543 3 7 3H17C18.1046 3 19 3.89543 19 5V21Z"/></svg>
+          <div class="icon-label">Watchlist</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21L12 16L5 21V5C5 3.89543 5.89543 7 3H17C18.1046 3 19 3.89543 19 5V21Z"/></svg></textarea>
+        </div>
+        <div class="icon-box">
+          <svg class="fill-action" viewBox="0 0 24 24"><path d="M20.84 4.61C20.3292 4.099 19.7228 3.69364 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69364 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.5783 8.50903 2.9987 7.05 2.9987C5.59096 2.9987 4.19169 3.5783 3.16 4.61C2.1283 5.64169 1.54871 7.04096 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93795 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06205 22.0329 6.39464C21.7563 5.72723 21.351 5.12083 20.84 4.61Z"/></svg>
+          <div class="icon-label">Liked / Favoritos</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M20.84 4.61C20.3292 4.099 19.7228 3.69364 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69364 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.5783 8.50903 2.9987 7.05 2.9987C5.59096 2.9987 4.19169 3.5783 3.16 4.61C2.1283 5.64169 1.54871 7.04096 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93795 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06205 22.0329 6.39464C21.7563 5.72723 21.351 5.12083 20.84 4.61Z"/></svg></textarea>
+        </div>
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"/><circle cx="12" cy="7" r="4"/></svg>
+          <div class="icon-label">Perfil</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"/><circle cx="12" cy="7" r="4"/></svg></textarea>
+        </div>
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="2" y1="14" x2="6" y2="14"/><line x1="10" y1="12" x2="14" y2="12"/><line x1="18" y1="16" x2="22" y2="16"/></svg></svg>
+          <div class="icon-label">Definições</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="2" y1="14" x2="6" y2="14"/><line x1="10" y1="12" x2="14" y2="12"/><line x1="18" y1="16" x2="22" y2="16"/></svg></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="icon-category">
+      <h3>3. Ações e Player Control</h3>
+      <div class="icon-grid">
+         <div class="icon-box">
+          <svg class="accent-warm" viewBox="0 0 24 24"><path d="M5 3L19 12L5 21V3Z"/></svg>
+          <div class="icon-label">Play</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3L19 12L5 21V3Z"/></svg></textarea>
+        </div>
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M12 5V19"/><path d="M5 12H19"/></svg>
+          <div class="icon-label">Adicionar à Lista</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5V19"/><path d="M5 12H19"/></svg></textarea>
+        </div>
+         <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M5 12H19"/></svg>
+          <div class="icon-label">Remover da Lista</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12H19"/></svg></textarea>
+        </div>
+         <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M14 9V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V9H5V21H19V9H14Z"/><path d="M10 13H14"/><path d="M12 13V17"/></svg>
+          <div class="icon-label">Like (Thumbs Up)</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V9H5V21H19V9H14Z"/><path d="M10 13H14"/><path d="M12 13V17"/></svg></textarea>
+        </div>
+         <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M10 15V19C10 20.1046 10.8954 21 12 21C13.1046 21 14 20.1046 14 19V15H19V3H5V15H10Z"/><path d="M14 11H10"/><path d="M12 11V7"/></svg>
+          <div class="icon-label">Dislike (Thumbs Down)</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15V19C10 20.1046 10.8954 21 12 21C13.1046 21 14 20.1046 14 19V15H19V3H5V15H10Z"/><path d="M14 11H10"/><path d="M12 11V7"/></svg></textarea>
+        </div>
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M4 4L8 8L4 12"/><path d="M12 4L16 8L12 12"/><path d="M20 4V12"/></svg>
+          <div class="icon-label">Skip / Next</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4L8 8L4 12"/><path d="M12 4L16 8L12 12"/><path d="M20 4V12"/></svg></textarea>
+        </div>
+        <div class="icon-box">
+          <svg class="accent-warm" viewBox="0 0 24 24"><path d="M16 3H21V8"/><path d="M4 20L21 3"/><path d="M21 16V21H16"/><path d="M15 15L21 21"/><path d="M4 4L9 9"/></svg>
+          <div class="icon-label">Shuffle / Aleatório</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3H21V8"/><path d="M4 20L21 3"/><path d="M21 16V21H16"/><path d="M15 15L21 21"/><path d="M4 4L9 9"/></svg></textarea>
+        </div>
+         <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M22 3H2L10 12.46V19L14 21V12.46L22 3Z"/></svg>
+          <div class="icon-label">Filtrar</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 3H2L10 12.46V19L14 21V12.46L22 3Z"/></svg></textarea>
+        </div>
+         <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M3 6H21"/><path d="M3 12H15"/><path d="M3 18H9"/></svg>
+          <div class="icon-label">Ordenar</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6H21"/><path d="M3 12H15"/><path d="M3 18H9"/></svg></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="icon-category">
+      <h3>4. Durações e Estados</h3>
+      <div class="icon-grid">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"/><path d="M12 3V12H21"/></svg>
+          <div class="icon-label">Filme Curto (~90m)</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"/><path d="M12 3V12H21"/></svg></textarea>
+        </div>
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"/><path d="M12 3V12H3"/></svg>
+          <div class="icon-label">Filme Normal (~120m)</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"/><path d="M12 3V12H3"/></svg></textarea>
+        </div>
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"/><path d="M12 3V12L16.5 19.79"/></svg>
+          <div class="icon-label">Filme Longo (+150m)</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"/><path d="M12 3V12L16.5 19.79"/></svg></textarea>
+        </div>
+
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M3 16H21V20H3V16Z"/><path d="M3 8H21V12H3V8Z"/></svg>
+          <div class="icon-label">Série Curta</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16H21V20H3V16Z"/><path d="M3 8H21V12H3V8Z"/></svg></textarea>
+        </div>
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M3 17H21V21H3V17Z"/><path d="M3 10H21V14H3V10Z"/><path d="M3 3H21V7H3V3Z"/></svg>
+          <div class="icon-label">Série Média</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17H21V21H3V17Z"/><path d="M3 10H21V14H3V10Z"/><path d="M3 3H21V7H3V3Z"/></svg></textarea>
+        </div>
+
+        <div class="icon-box">
+          <svg class="accent-cool" viewBox="0 0 24 24"><path d="M22 11.08V12C21.9988 14.1564 21.3005 16.2547 20.0093 17.9818C18.7182 19.709 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4881 2.02168 11.3363C2.16356 9.18455 2.99721 7.13631 4.39828 5.49706C5.79935 3.85781 7.69279 2.71537 9.79619 2.24013C11.8996 1.7649 14.1003 1.98232 16.07 2.85999"/><path d="M22 4L12 14.01L9 11.01"/></svg>
+          <div class="icon-label">Visto (Checked)</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12C21.9988 14.1564 21.3005 16.2547 20.0093 17.9818C18.7182 19.709 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4881 2.02168 11.3363C2.16356 9.18455 2.99721 7.13631 4.39828 5.49706C5.79935 3.85781 7.69279 2.71537 9.79619 2.24013C11.8996 1.7649 14.1003 1.98232 16.07 2.85999"/><path d="M22 4L12 14.01L9 11.01"/></svg></textarea>
+        </div>
+         <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M17.94 17.94C16.2306 19.2343 14.1445 19.9578 12 20C7.58172 20 4 16.4183 4 12C4.04219 9.85549 4.76573 7.76942 6.06 6.06"/><path d="M10 3.33997C10.6535 3.11745 11.3335 3.00274 12.02 2.99997C16.9906 2.99997 21.02 7.02941 21.02 12C21.0173 12.6864 20.9025 13.3664 20.68 14.02"/><path d="M2 2L22 22"/></svg>
+          <div class="icon-label">Não Visto</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94C16.2306 19.2343 14.1445 19.9578 12 20C7.58172 20 4 16.4183 4 12C4.04219 9.85549 4.76573 7.76942 6.06 6.06"/><path d="M10 3.33997C10.6535 3.11745 11.3335 3.00274 12.02 2.99997C16.9906 2.99997 21.02 7.02941 21.02 12C21.0173 12.6864 20.9025 13.3664 20.68 14.02"/><path d="M2 2L22 22"/></svg></textarea>
+        </div>
+         <div class="icon-box">
+          <svg class="accent-warm" viewBox="0 0 24 24"><path d="M5 3L19 12L5 21V3Z"/><path d="M2 21H22"/></svg>
+          <div class="icon-label">Em Progresso</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3L19 12L5 21V3Z"/><path d="M2 21H22"/></svg></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="icon-category">
+      <h3>5. Miscelânea e Géneros</h3>
+      <div class="icon-grid">
+        <div class="icon-box">
+          <svg class="accent-warm" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+          <div class="icon-label">Estrela (Rating)</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg></textarea>
+        </div>
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><path d="M16 2V6"/><path d="M8 2V6"/><path d="M3 10H21"/></svg>
+          <div class="icon-label">Calendário (Ano)</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><path d="M16 2V6"/><path d="M8 2V6"/><path d="M3 10H21"/></svg></textarea>
+        </div>
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6V12L16 14"/></svg>
+          <div class="icon-label">Relógio (Duração)</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6V12L16 14"/></svg></textarea>
+        </div>
+         <div class="icon-box">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><path d="M17 2L12 7L7 2"/></svg>
+          <div class="icon-label">Streaming Provider</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><path d="M17 2L12 7L7 2"/></svg></textarea>
+        </div>
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7L12 12L22 7L12 2Z"/><path d="M2 17L12 22L22 17"/><path d="M2 12L12 17L22 12"/></svg>
+          <div class="icon-label">Sci-Fi</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7L12 12L22 7L12 2Z"/><path d="M2 17L12 22L22 17"/><path d="M2 12L12 17L22 12"/></svg></textarea>
+        </div>
+         <div class="icon-box">
+          <svg viewBox="0 0 24 24"><path d="M23 7L16 12L23 17V7Z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          <div class="icon-label">Documentário</div>
+          <textarea class="code-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7L16 12L23 17V7Z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></textarea>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
